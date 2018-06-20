@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Expense } from '../expense';
+import { EXPENSES } from '../mock-expenses';
 
 @Component({
   selector: 'app-expenses',
   templateUrl: './expenses.component.html',
   styleUrls: ['./expenses.component.css']
 })
+
 export class ExpensesComponent implements OnInit {
 
-  expense: Expense = {
-    id: 1,
-    shop: 'Biedronka',
-    price: '50',
-    date: '2018-06-06',
-    time: '18:00',
-    paymentMethod: 'cash',
-    document: 'receipt-link-www-sth'
-  };
+  expenses = EXPENSES;
+
+  selectedExpense: Expense;
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  onSelect(expense: Expense): void {
+    this.selectedExpense = expense;
   }
 
 }
