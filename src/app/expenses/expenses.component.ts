@@ -13,8 +13,6 @@ export class ExpensesComponent implements OnInit {
 
   expenses: Expense[];
 
-  selectedExpense: Expense;
-
   constructor(private expenseService: ExpenseService) {
   }
 
@@ -25,10 +23,6 @@ export class ExpensesComponent implements OnInit {
 
   ngOnInit() {
     this.getExpenses();
-  }
-
-  onSelect(expense: Expense): void {
-    this.selectedExpense = expense;
   }
 
 }

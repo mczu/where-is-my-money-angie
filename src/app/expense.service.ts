@@ -14,6 +14,12 @@ export class ExpenseService {
     return of(EXPENSES);
   }
 
+  getExpense(id: number): Observable<Expense> {
+    // TODO: send the message _after_ fetching the expense
+    this.messageService.add(`ExpenseService: fetched expense id=${id}`);
+    return of(EXPENSES.find(expense => expense.id === id));
+  }
+
   constructor(private messageService: MessageService) { }
 
 }
