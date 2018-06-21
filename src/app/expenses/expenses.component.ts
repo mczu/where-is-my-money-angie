@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Expense } from '../expense';
-import { EXPENSES } from '../mock-expenses';
+import { ExpenseService } from '../expense.service';
 
 @Component({
   selector: 'app-expenses',
@@ -11,14 +11,19 @@ import { EXPENSES } from '../mock-expenses';
 
 export class ExpensesComponent implements OnInit {
 
-  expenses = EXPENSES;
+  expenses: Expense[];
 
   selectedExpense: Expense;
 
-  constructor() {
+  constructor(private expenseService: ExpenseService) {
+  }
+
+  getExpenses(): void {
+    this.expenses = this.expenseService.getExpenses();
   }
 
   ngOnInit() {
+    this.getExpenses();
   }
 
   onSelect(expense: Expense): void {
