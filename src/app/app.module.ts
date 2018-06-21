@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpenseDetailComponent } from './expense-detail/expense-detail.component';
 import { ExpenseService } from './expense.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpensesComponent,
-    ExpenseDetailComponent
+    ExpenseDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [ExpenseService],
+  providers: [ExpenseService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
