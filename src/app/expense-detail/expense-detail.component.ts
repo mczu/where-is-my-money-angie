@@ -30,4 +30,8 @@ export class ExpenseDetailComponent implements OnInit {
       .subscribe(expense => this.expense = expense);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
 }
