@@ -19,7 +19,8 @@ export class ExpensesComponent implements OnInit {
   }
 
   getExpenses(): void {
-    this.expenses = this.expenseService.getExpenses();
+    this.expenseService.getExpenses()
+      .subscribe(expenses => this.expenses = expenses);
   }
 
   ngOnInit() {

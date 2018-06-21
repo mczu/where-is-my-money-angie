@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 
 import { Expense } from './expense';
 import { EXPENSES } from './mock-expenses';
@@ -6,8 +8,8 @@ import { EXPENSES } from './mock-expenses';
 @Injectable()
 export class ExpenseService {
 
-  getExpenses(): Expense[] {
-    return EXPENSES;
+  getExpenses(): Observable<Expense> {
+    return of(EXPENSES);
   }
 
   constructor() { }
