@@ -20,6 +20,18 @@ export class ExpensesComponent implements OnInit {
     this.expenseService.getExpenses()
       .subscribe(expenses => this.expenses = expenses);
   }
+  add(shop: string): void {
+    shop = shop.trim();
+    if (!shop) { return; }
+    this.expenseService.addExpense({ shop } as Expense)
+      .subscribe(expense => {
+        this.expenses.push(expense);
+      });
+  }
+  delete(expense: Expense): void {
+    this.expenses = this.expenses.filter(h => h !== expense);
+    this.expenseService.deleteExpense(expense).subscribe();
+  }
 
   ngOnInit() {
     this.getExpenses();

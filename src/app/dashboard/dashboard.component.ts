@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   getExpenses(): void {
     this.expenseService.getExpenses()
-    .subscribe(expenses => this.expenses = expenses.slice(1,5));
+    .subscribe(expenses => this.expenses = expenses.slice(1, 5));
   }
 
 }
