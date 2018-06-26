@@ -1,6 +1,6 @@
-<h2>My Expenses</h2>
+<h2>Add New Expense</h2>
 <div>
-  <label>Expense shop:
+  <label>Shop:
     <input #expenseShop />
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
@@ -8,12 +8,28 @@
     add
   </button>
 </div>
-<ul class="expenses">
-  <li *ngFor="let expense of expenses">
-      <a routerLink="/detail/{{expense.id}}">
-        <span class="badge">{{expense.id}}</span> {{expense.shop}}
-      </a>
-      <button class="delete" title="delete expense"
-      (click)="delete(expense)">x</button>
-  </li>
-</ul>
+<h2>My Expenses</h2>
+  <table>
+    <thead>
+      <td>id</td>
+      <td>shop</td>
+      <td>price</td>
+      <td>date</td>
+      <td>payment method</td>
+      <td>link</td>
+      <td>delete</td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of expenses">
+        <td>{{expense.id}}</td>
+        <td>{{expense.shop}}</td>
+        <td>{{expense.price}}</td>
+        <td>{{expense.date}}</td>
+        <td>{{expense.time}}</td>
+        <td>{{expense.paymentMethod}}</td>
+        <td>{{expense.document}}</td>
+        <td><button class="delete" title="delete expense"
+          (click)="delete(expense)">x</button></td>
+      </tr>
+    </tbody>
+  </table>
