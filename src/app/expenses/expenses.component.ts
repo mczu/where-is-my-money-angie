@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Expense } from '../expense';
 import { ExpenseService } from '../expense.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-expenses',
@@ -12,6 +13,17 @@ import { ExpenseService } from '../expense.service';
 export class ExpensesComponent implements OnInit {
 
   expenses: Expense[];
+
+  // form
+  form = new FormGroup({
+    id: new FormControl(''),
+    shop: new FormControl(''),
+    price: new FormControl(''),
+    date: new FormControl(''),
+    time: new FormControl(''),
+    paymentMethod: new FormControl(''),
+    document: new FormControl('')
+  });
 
   constructor(private expenseService: ExpenseService) {
   }
@@ -35,6 +47,10 @@ export class ExpensesComponent implements OnInit {
 
   ngOnInit() {
     this.getExpenses();
+  }
+
+  sendData() {
+    console.log(this.form.value);
   }
 
 }

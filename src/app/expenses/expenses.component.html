@@ -8,6 +8,18 @@
     add
   </button>
 </div>
+  <form *ngIf="form" [formGroup]="form">
+    <h2>Add expense</h2>
+    <input formControlName="id" placeholder="Id">
+    <input formControlName="shop" placeholder="Shop">
+    <input formControlName="price" placeholder="Price">
+    <input formControlName="date" placeholder="Date">
+    <input formControlName="time" placeholder="Time">
+    <input formControlName="paymentMethod" placeholder="Payment Method">
+    <input formControlName="document" placeholder="Document">
+
+    <button (click)="sendData()">Submit</button>
+</form>
 <h2>My Expenses</h2>
   <table>
     <thead>
