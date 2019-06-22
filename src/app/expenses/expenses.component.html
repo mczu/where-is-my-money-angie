@@ -1,16 +1,26 @@
-<h2>Add New Expense</h2>
+<!-- <h2>Add New Expense</h2>
 <div>
   <label>Shop:
     <input #expenseShop />
-  </label>
+  </label> -->
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(expenseShop.value); expenseShop.value=''">
+  <!-- <button (click)="add(expenseShop.value); expenseShop.value=''">
     add
   </button>
-</div>
-  <form *ngIf="form" [formGroup]="form">
+</div> -->
+  <form *ngIf="expenseForm" [formGroup]="expenseForm">
     <h2>Add expense</h2>
     <input formControlName="id" placeholder="Id">
+    <div *ngIf="id.invalid && (id.dirty || id.touched)"
+  class="alert alert-danger">
+
+<div *ngIf="id.errors.required">
+  Id is required.
+</div>
+<div *ngIf="id.errors.pattern">
+  Only numbers.
+</div>
+</div>
     <input formControlName="shop" placeholder="Shop">
     <input formControlName="price" placeholder="Price">
     <input formControlName="date" placeholder="Date">
