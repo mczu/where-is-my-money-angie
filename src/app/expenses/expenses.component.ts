@@ -38,24 +38,23 @@ export class ExpensesComponent implements OnInit {
 
   sendData() {
     console.warn(this.expenseForm.value);
-    this.expenseService.addExpense(this.expenseForm.value as Expense)
+    console.log(this.expenseForm.value);
+    // tslint:disable-next-line:max-line-length
+    if (this.expenseForm.value.id !== '' && this.expenseForm.value.shop !== '' && this.expenseForm.value.price !== '' && this.expenseForm.value.date !== '') {
+      this.expenseService.addExpense(this.expenseForm.value as Expense)
       .subscribe(expense => {
         this.expenses.push(expense);
       });
+    } else {
+      alert('Form not filled completely');
+    }
   }
 
   getExpenses(): void {
     this.expenseService.getExpenses()
       .subscribe(expenses => this.expenses = expenses);
   }
-  // add(shop: string): void {
-  //   shop = shop.trim();
-  //   if (!shop) { return; }
-  //   this.expenseService.addExpense({ shop } as Expense)
-  //     .subscribe(expense => {
-  //       this.expenses.push(expense);
-  //     });
-  // }
+
   delete(expense: Expense): void {
     this.expenses = this.expenses.filter(h => h !== expense);
     this.expenseService.deleteExpense(expense).subscribe();
@@ -64,9 +63,5 @@ export class ExpensesComponent implements OnInit {
   ngOnInit() {
     this.getExpenses();
   }
-
-  // sendData() {
-  //   console.log(this.form.value);
-  // }
 
 }

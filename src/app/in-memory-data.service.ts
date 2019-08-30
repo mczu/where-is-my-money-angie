@@ -3,12 +3,6 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const expenses = [
-    // { id: 11, shop: 'Świat Ksiązki' },
-    // { id: 12, shop: 'MMM' },
-    // { id: 13, shop: 'Automat biletowy' },
-    // { id: 14, shop: 'Owocowy domek'},
-    // { id: 15, shop: 'Rossmann' },
-    // { id: 16, shop: 'Biedronka' }
     { id: 11, shop: 'Świat Ksiązki', price: '29', date: '2018-06-11', time: '18:56', paymentMethod: 'gotówka', document: 'linkdodropboxa' },
     // tslint:disable-next-line:max-line-length
     { id: 12, shop: 'Manufaktura Mojej Mamy', price: '11,13', date: '2018-06-12', time: '17:08', paymentMethod: 'gotówka', document: 'linkdodropboxa' },

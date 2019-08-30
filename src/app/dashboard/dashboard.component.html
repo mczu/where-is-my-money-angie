@@ -3,6 +3,7 @@
   <a *ngFor="let expense of expenses" class="col-1-4" routerLink="/detail/{{expense.id}}">
     <div class="module expense">
       <h4>{{expense.shop}}</h4>
+      <p>{{expense.price}}</p>
     </div>
   </a>
 </div>

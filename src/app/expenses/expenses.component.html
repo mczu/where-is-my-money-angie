@@ -1,18 +1,8 @@
-<!-- <h2>Add New Expense</h2>
-<div>
-  <label>Shop:
-    <input #expenseShop />
-  </label> -->
-  <!-- (click) passes input value to add() and then clears the input -->
-  <!-- <button (click)="add(expenseShop.value); expenseShop.value=''">
-    add
-  </button>
-</div> -->
 <div class="add-expense-section">
   <form *ngIf="expenseForm" [formGroup]="expenseForm">
     <h2>Add expense</h2>
     <label>Id</label>
-    <input formControlName="id" placeholder="Id"><br>
+    <input formControlName="id" type="number" step="1" placeholder="Id"><br>
     <div *ngIf="id.invalid && (id.dirty || id.touched)"
   class="alert alert-danger">
 
@@ -28,11 +18,14 @@
     <label>Price</label>
     <input formControlName="price" placeholder="Price"><br>
     <label>Date</label>
-    <input formControlName="date" placeholder="Date"><br>
+    <input formControlName="date" type="date" placeholder="Date"><br>
     <label>Time</label>
-    <input formControlName="time" placeholder="Time"><br>
+    <input formControlName="time" type="time" placeholder="Time"><br>
     <label>Payment Method</label>
-    <input formControlName="paymentMethod" placeholder="Payment Method"><br>
+    <select formControlName="paymentMethod">
+      <option value="cash">cash</option> 
+      <option value="card">card</option>
+    </select>
     <label>Document</label>
     <input formControlName="document" placeholder="Document"><br>
 
