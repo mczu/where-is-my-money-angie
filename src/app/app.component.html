@@ -1,7 +1,12 @@
-<h1>{{title}}</h1>
-<nav>
+<header class="header">
+  <h1 class="header-h1">{{title}}?</h1>
+  <img class="header-img" src="./assets/thinking.png"/>
+</header>
+<nav class="navbar">
   <a routerLink="/expenses">Expenses</a>
   <a routerLink="/dashboard">Dashboard</a>
 </nav>
+<main>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
+</main>

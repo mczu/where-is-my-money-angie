@@ -8,9 +8,11 @@
     add
   </button>
 </div> -->
+<div class="add-expense-section">
   <form *ngIf="expenseForm" [formGroup]="expenseForm">
     <h2>Add expense</h2>
-    <input formControlName="id" placeholder="Id">
+    <label>Id</label>
+    <input formControlName="id" placeholder="Id"><br>
     <div *ngIf="id.invalid && (id.dirty || id.touched)"
   class="alert alert-danger">
 
@@ -21,22 +23,30 @@
   Only numbers.
 </div>
 </div>
-    <input formControlName="shop" placeholder="Shop">
-    <input formControlName="price" placeholder="Price">
-    <input formControlName="date" placeholder="Date">
-    <input formControlName="time" placeholder="Time">
-    <input formControlName="paymentMethod" placeholder="Payment Method">
-    <input formControlName="document" placeholder="Document">
+  <label>Shop</label>
+    <input formControlName="shop" placeholder="Shop"><br>
+    <label>Price</label>
+    <input formControlName="price" placeholder="Price"><br>
+    <label>Date</label>
+    <input formControlName="date" placeholder="Date"><br>
+    <label>Time</label>
+    <input formControlName="time" placeholder="Time"><br>
+    <label>Payment Method</label>
+    <input formControlName="paymentMethod" placeholder="Payment Method"><br>
+    <label>Document</label>
+    <input formControlName="document" placeholder="Document"><br>
 
     <button (click)="sendData()">Submit</button>
 </form>
-<h2>My Expenses</h2>
-  <table>
+</div>
+<h2 class="expense-header">My Expenses</h2>
+  <table class="expenses-table">
     <thead>
       <td>id</td>
       <td>shop</td>
       <td>price</td>
       <td>date</td>
+      <td>time</td>
       <td>payment method</td>
       <td>link</td>
       <td>delete</td>

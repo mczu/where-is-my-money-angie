@@ -5,7 +5,6 @@ button {
     border-radius: 4px;
     cursor: pointer;
     cursor: hand;
-    font-family: Arial;
   }
   
   button:hover {
@@ -15,4 +14,29 @@ button {
   button.delete {
     background-color: gray !important;
     color: white;
+  }
+
+  .add-expense-section {
+    margin: 25px 15px 15px 0;
+    padding: 0 20px 20px 15px;
+    background-color: #fcdb4b;
+    border: 2px solid #f4a440;
+    border-radius: 4px;
+    width: fit-content;
+  }
+  .expense-header {
+    /* text-align: center; */
+    border-bottom: 2px solid #f4a440;
+    margin-right: 15px; 
+  }
+  .expenses-table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 2px solid #f4a440; 
+    padding: 6px;
+  }
+  thead {
+    font-weight: 500;
+    background-color: #fcdb4b; 
   }
